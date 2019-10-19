@@ -15,6 +15,17 @@ Surname varchar(50),
 Upassword varchar(100)
 );
 
+create table Vital(
+VitalID int identity(1,1) primary key, 
+Heart Rate int,
+Blood Pressure int,
+Blood Sugar int,
+Iron Levels int,
+White Blood Cell int, 
+Red Blood Cell int,
+Antibodies int,
+Iron Level int,
+ )
 
 create table PersonalDetails(
 IDNumber varchar(20) primary key,
