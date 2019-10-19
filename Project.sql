@@ -17,14 +17,14 @@ Upassword varchar(100)
 
 create table Vital(
 VitalID int identity(1,1) primary key, 
-Heart Rate int,
-Blood Pressure int,
-Blood Sugar int,
-Iron Levels int,
-White Blood Cell int, 
-Red Blood Cell int,
+HeartRate int,
+BloodPressure int,
+BloodSugar int,
+IronLevels int,
+WhiteBlood Cell int, 
+RedBlood Cell int,
 Antibodies int,
-Iron Level int,
+IronLevel int,
  )
 
 create table PersonalDetails(
