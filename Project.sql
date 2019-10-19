@@ -26,7 +26,7 @@ AddressID int,
 foreign key (EmailAddress) references SignInDetails(EmailAddress),
 );
 
-Create table Addresses(
+Create table Address(
 AddressID int identity(1,1) primary key,
 Province varchar(20),
 City varchar(20),
