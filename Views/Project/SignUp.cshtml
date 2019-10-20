@@ -21,26 +21,83 @@
     <div class="Login">
 
 
-        <form action="CreatePatientDetails">
-            <label for="txtName">Name:</label>
-            <br />
-            <input type="text" id="txtName" name="Name" placeholder="Enter your name">
-            <br />
-            <label for="txtSurname">Surname:</label>
-            <br />
-            <input type="text" id="txtSurname" name="Surname" placeholder="Enter your surname">
-            <br />
-            <label for="txtEmail">Email Address:</label>
-            <br />
-            <input type="text" id="txtEmail" name="Email" placeholder="Enter your email address">
-            <br />
-            <label for="txtCreatePassword">Create New Password:</label>
-            <br />
-            <input id="txtCreatePassword" type="password" placeholder="Create a new password" />
-            <br />
-            <input type="Submit" value="Sign Up">
-        </form>
+        <div class="container">
+            <form action="WelcomePage">
+                <div class="row">
+                    <div class="col-lg-4">
 
+                        <label for="txtName">Name:</label>
+                        <br />
+                        <input type="text" id="txtName" name="Name" placeholder="Enter your name">
+                        <br />
+                        <label for="txtSurname">Surname:</label>
+                        <br />
+                        <input type="text" id="txtSurname" name="Surname" placeholder="Enter your surname">
+                        <br />
+                        <label for="txtEmail">Email Address:</label>
+                        <br />
+                        <input type="text" id="txtEmail" name="Email" placeholder="Enter your email address">
+                        <br />
+                        <label for="txtCreatePassword">Create New Password:</label>
+                        <br />
+                        <input id="txtCreatePassword" type="password" placeholder="Create a new password" />
+                        <br />
+                        <label for="txtCreatePassword">Confirm Password:</label>
+                        <br />
+                        <input id="txtCreatePassword" type="password" placeholder="Confirm the new password" />
+
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="txtAge">Age:</label>
+                        <br />
+                        <input type="text" id="txtAge" name="Age" placeholder="Enter your Age">
+                        <br />
+                        <label for="txtContact">Contact Details:</label>
+                        <br />
+                        <input type="text" id="txtContact" name="Contact" placeholder="Enter your phone number">
+                        <br />
+                        <label for="txtAddress">Address:</label>
+                        <br />
+                        <input type="text" id="txtStreetNo" name="StreetNo" placeholder="Enter your street number">
+                        <br />
+                        <label for="txtStreetName">Street Name:</label>
+                        <br />
+                        <input type="text" id="txtStreetName" name="StreetName" placeholder="Enter your street name">
+                        <br />
+                        <label for="txtSuburb">Suburb:</label>
+                        <br />
+                        <input type="text" id="txtSuburb" name="Suburb" placeholder="Enter your suburb">
+                        <br />
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="txtIllness">Type of Illness</label>
+                        <br />
+                        <select>
+                            <option value="heartDisease">Heart Disease</option>
+                            <option value="diabetes">Diabetes</option>
+                            <option value="influenza">Influenza</option>
+                        </select>
+                        <br />
+                        <label for="txtAid">Medical Aid:</label>
+                        <br />
+                        <input type="text" id="txtAid" name="Aid" placeholder="Enter the name of your medical aid, if applicable">
+                        <br />
+                        <label for="txtAid">Medication:</label>
+                        <br />
+                        <input type="text" id="txtMeds" name="Meds" placeholder="What medication are you on currently?">
+                        <br />
+                        <label for="txtChipID">Chip ID:</label>
+                        <br />
+                        <input type="text" id="txtChipID" name="ChipID" placeholder="Enter your chip ID">
+                        <br />
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="Submit" value="Sign Up">
+                </div>
+            </form>
+        </div>
+       
     </div>
     <div>
     </div>
