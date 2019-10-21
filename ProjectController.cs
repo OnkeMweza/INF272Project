@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Security.Cryptography;
 using Deliverable2.Models;
 using System.Text;
+using System.Net;
 
 namespace INF272Project.Controllers
 {
@@ -23,11 +24,6 @@ namespace INF272Project.Controllers
         }
 
         public ActionResult WelcomePage()
-        {
-            return View();
-        }
-
-        public ActionResult SignUp()
         {
             return View();
         }
@@ -63,6 +59,21 @@ namespace INF272Project.Controllers
                 }
                 return builder.ToString();
             }
+        }
+
+        public ActionResult SignUp()
+        {
+            UserVM userVM = TempData["userVM"] as UserVM;
+            if (userVM.IsLogedIn(db))
+            {
+                userVM.RefreshGUID(db);
+                PatientVM patientVM = new PatientVM();
+                patientVM.userVM = userVM;
+                patientVM.patients = db.Patients.ToList();
+                return View(patientVM);
+            }
+            return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+
         }
 
         public ActionResult MedicalInfo()
