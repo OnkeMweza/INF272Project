@@ -7,6 +7,7 @@
 
 <html>
 <head>
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">*@
     <link href="~/StyleSheet1.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
     <title>SignUp</title>
@@ -18,88 +19,123 @@
         <a href="https://localhost:44371/Project/Login">Login Here</a>
         <a class="active" href="https://localhost:44371/Project/Home">Home</a>
     </div>
-    <div class="Login">
-
-
-        <div class="container">
-            <form action="WelcomePage">
-                <div class="row">
-                    <div class="col-lg-4">
-
-                        <label for="txtName">Name:</label>
-                        <br />
-                        <input type="text" id="txtName" name="Name" placeholder="Enter your name">
-                        <br />
-                        <label for="txtSurname">Surname:</label>
-                        <br />
-                        <input type="text" id="txtSurname" name="Surname" placeholder="Enter your surname">
-                        <br />
-                        <label for="txtEmail">Email Address:</label>
-                        <br />
-                        <input type="text" id="txtEmail" name="Email" placeholder="Enter your email address">
-                        <br />
-                        <label for="txtCreatePassword">Create New Password:</label>
-                        <br />
-                        <input id="txtCreatePassword" type="password" placeholder="Create a new password" />
-                        <br />
-                        <label for="txtCreatePassword">Confirm Password:</label>
-                        <br />
-                        <input id="txtCreatePassword" type="password" placeholder="Confirm the new password" />
-
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="txtAge">Age:</label>
-                        <br />
-                        <input type="text" id="txtAge" name="Age" placeholder="Enter your Age">
-                        <br />
-                        <label for="txtContact">Contact Details:</label>
-                        <br />
-                        <input type="text" id="txtContact" name="Contact" placeholder="Enter your phone number">
-                        <br />
-                        <label for="txtAddress">Street Number:</label>
-                        <br />
-                        <input type="text" id="txtStreetNo" name="StreetNo" placeholder="Enter your street number">
-                        <br />
-                        <label for="txtStreetName">Street Name:</label>
-                        <br />
-                        <input type="text" id="txtStreetName" name="StreetName" placeholder="Enter your street name">
-                        <br />
-                        <label for="txtSuburb">Suburb:</label>
-                        <br />
-                        <input type="text" id="txtSuburb" name="Suburb" placeholder="Enter your suburb">
-                        <br />
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="txtIllness">Type of Illness</label>
-                        <br />
-                        <select>
-                            <option value="heartDisease">Heart Disease</option>
-                            <option value="diabetes">Diabetes</option>
-                            <option value="influenza">Influenza</option>
-                        </select>
-                        <br />
-                        <label for="txtAid">Medical Aid:</label>
-                        <br />
-                        <input type="text" id="txtAid" name="Aid" placeholder="Enter the name of your medical aid, if applicable">
-                        <br />
-                        <label for="txtAid">Medication:</label>
-                        <br />
-                        <input type="text" id="txtMeds" name="Meds" placeholder="What medication are you on currently?">
-                        <br />
-                        <label for="txtChipID">Chip ID:</label>
-                        <br />
-                        <input type="text" id="txtChipID" name="ChipID" placeholder="Enter your chip ID">
-                        <br />
-                    </div>
-                </div>
-                <div class="row">
-                    <input type="Submit" value="Sign Up">
-                </div>
-            </form>
+    <hr />
+    <h1 class="Heading">Personal Details</h1>
+    <form action="WelcomePage">
+        <div class="Login">
+            <label for="txtName">Name:</label>
+            <br />
+            <input type="text" id="txtName" name="Name" required placeholder="Enter your name">
+            <br />
+            <label for="txtSurname">Surname:</label>
+            <br />
+            <input type="text" id="txtSurname" name="Surname" required placeholder="Enter your surname">
+            <br />
+            <label for="txtEmail">Email Address:</label>
+            <br />
+            <input type="text" id="txtEmail" name="Email" required placeholder="Enter your email address">
+            <br />
+            <label for="txtCreatePassword">Create New Password:</label>
+            <br />
+            <input id="txtCreatePassword" type="password" required placeholder="Create a new password" />
+            <br />
+            <label for="txtCreatePassword">Confirm Password:</label>
+            <br />
+            <input id="txtCreatePassword" type="password" required placeholder="Confirm the new password" />
+            <br />
+            <label for="txtAge">Age:</label>
+            <br />
+            <input type="text" id="txtAge" name="Age" required placeholder="Enter your Age">
+            <br />
+            <label for="txtContact">Contact Details:</label>
+            <br />
+            <input type="text" id="txtContact" name="Contact" required placeholder="Enter your phone number">
+            <br />
         </div>
+        <hr />
+        <h1 class="Heading">Physical Address</h1>
+        <div class="Login">
+            <label for="txtAddress">House Number:</label>
+            <br />
+            <input type="text" id="txtHouseNo" name="HouseNo" required placeholder="Enter your house number">
+            <br />
+            <label for="txtStreetName">Street Name:</label>
+            <br />
+            <select required>
+                <option value="heartDisease">Heart Disease</option>
+                <option value="diabetes">Diabetes</option>
+                <option value="influenza">Influenza</option>
+            </select>
+            <br />
+            <label for="txtSuburb">Suburb:</label>
+            <br />
+            <select required>
+                <option value="heartDisease">Heart Disease</option>
+                <option value="diabetes">Diabetes</option>
+                <option value="influenza">Influenza</option>
+            </select>
+            <br />
+        </div>
+        <hr />
+        <h1 class="Heading">Medical Info</h1>
+        <div class="Login">
+            <label for="txtIllness">Type of Illness</label>
+            <br />
+            <select required>
+                <option value="heartDisease">Heart Disease</option>
+                <option value="diabetes">Diabetes</option>
+                <option value="influenza">Influenza</option>
+            </select>
+            <br />
+            <label for="txtAid">Medical Aid:</label>
+            <br />
+            <select required>
+                <option value="Medihelp">Medihelp</option>
+                <option value="MomentumHealth">Momentum Health</option>
+                <option value="DiscoveryHealth">Discovery Health</option>
+                <option value="Medshield">Medshield</option>
+                <option value="BestMed">BestMed</option>
+                <option value="Bonitas">Bonitas</option>
 
-    </div>
-    <div>
-    </div>
+            </select>
+            <br />
+            <label for="txtAid">Medication:</label>
+            <br />
+            <input type="text" id="txtMeds" name="Meds" required placeholder="What medication are you on currently?">
+            <br />
+            <label for="txtChipID">Chip ID:</label>
+            <br />
+            <input type="text" id="txtChipID" name="ChipID" required placeholder="Enter your chip ID">
+            <br />
+        </div>
+        <hr />
+        <h1 class="Heading">Emergency Contacts</h1>
+        <div class="Login">
+            <label for="txtRelName">Relative Name:</label>
+            <br />
+            <input type="text" id="txtRelName" name="RelName" required placeholder="Enter your relative's name">
+            <br />
+            <label for="txtRelSurname">Relative Surname:</label>
+            <br />
+            <input type="text" id="txtRelSurname" name="RelSurname" required placeholder="Enter your relative's surname">
+            <br />
+            <label for="txtName">Relative Personal Number:</label>
+            <br />
+            <input type="text" id="txtRelPersNo" name="RelPersNo" required placeholder="Enter your relative's personal number">
+            <br />
+            <label for="txtRelHomeNo">Relative Home Number:</label>
+            <br />
+            <input type="text" id="txtRelHomeNo" name="txtRelHomeNo" placeholder="Enter your relative's home number">
+            <br />
+            <label for="txtRelWorkNo">Relative Work Number:</label>
+            <br />
+            <input type="text" id="txtRelWorkNo" name="txtRelWorkNo" placeholder="Enter your relative's work number">
+            <br />
+            <input type="Submit" value="Sign Up">
+        </div>
+        
+
+
+    </form>
 </body>
 </html>
