@@ -1,4 +1,5 @@
-﻿
+﻿@model Deliverable2.Models.Street
+
 @{
     Layout = null;
 }
@@ -61,19 +62,11 @@
             <br />
             <label for="txtStreetName">Street Name:</label>
             <br />
-            <select required>
-                <option value="heartDisease">Heart Disease</option>
-                <option value="diabetes">Diabetes</option>
-                <option value="influenza">Influenza</option>
-            </select>
+            @Html.DropDownList("StreetName", null, htmlAttributes: new { @class = "form-control" })
             <br />
             <label for="txtSuburb">Suburb:</label>
             <br />
-            <select required>
-                <option value="heartDisease">Heart Disease</option>
-                <option value="diabetes">Diabetes</option>
-                <option value="influenza">Influenza</option>
-            </select>
+            @Html.DropDownList("SurbubID", null, htmlAttributes: new { @class = "form-control" })
             <br />
         </div>
         <hr />
@@ -81,27 +74,11 @@
         <div class="Login">
             <label for="txtIllness">Type of Illness</label>
             <br />
-            <select required>
-                <option value="heartDisease">Heart Disease</option>
-                <option value="diabetes">Diabetes</option>
-                <option value="influenza">Influenza</option>
-            </select>
+            @Html.DropDownList("IllnessName", null, htmlAttributes: new { @class = "form-control" })
             <br />
             <label for="txtAid">Medical Aid:</label>
             <br />
-            <select required>
-                <option value="Medihelp">Medihelp</option>
-                <option value="MomentumHealth">Momentum Health</option>
-                <option value="DiscoveryHealth">Discovery Health</option>
-                <option value="Medshield">Medshield</option>
-                <option value="BestMed">BestMed</option>
-                <option value="Bonitas">Bonitas</option>
-
-            </select>
-            <br />
-            <label for="txtAid">Medication:</label>
-            <br />
-            <input type="text" id="txtMeds" name="Meds" required placeholder="What medication are you on currently?">
+            @Html.DropDownList("MedicalAidName", null, htmlAttributes: new { @class = "form-control" })
             <br />
             <label for="txtChipID">Chip ID:</label>
             <br />
@@ -133,7 +110,7 @@
             <br />
             <input type="Submit" value="Sign Up">
         </div>
-        
+
 
 
     </form>

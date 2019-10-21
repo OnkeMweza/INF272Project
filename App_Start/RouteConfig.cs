@@ -16,7 +16,7 @@ namespace Deliverable2
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Streets", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Project", action = "Home", id = UrlParameter.Optional }
             );
         }
     }
