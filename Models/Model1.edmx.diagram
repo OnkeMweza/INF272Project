@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e9582abda53449a68d6cb5bae61b0893" Name="Diagram1">
+        <EntityTypeShape EntityType="Project_DBModel.Hospital" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Illness" Width="1.5" PointX="8.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.MedicalAid" Width="1.5" PointX="8.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Partner" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Patient" Width="1.5" PointX="10.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.PatientRelative" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Street" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Surbub" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.SysAdmin" Width="1.5" PointX="10.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.SysUser" Width="1.5" PointX="8.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.UAddress" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.UserType" Width="1.5" PointX="6" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DBModel.Vital" Width="1.5" PointX="8.25" PointY="18" IsExpanded="true" />
+        <AssociationConnector Association="Project_DBModel.FK__Hospital__AID__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Patient__IID__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Patient__MID__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Patient__AID__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Patient__RID__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Patient__userID__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Patient__VitalID__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__Street__SurbubID__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__UAddress__Street__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__SysAdmin__userID__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DBModel.FK__SysUser__UTID__4F7CD00D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
