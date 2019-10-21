@@ -178,6 +178,7 @@
     <Content Include="Views\Project\CreatePatientDetails.cshtml" />
     <Content Include="Views\Project\CreateMedicalInfo.cshtml" />
     <Content Include="Views\Project\UpdateMedicalInfo.cshtml" />
+    <Content Include="Views\Project\Hospitals.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

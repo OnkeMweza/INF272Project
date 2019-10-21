@@ -58,5 +58,9 @@ namespace INF272Project.Controllers
         {
             return View();
         }
+        public ActionResult Hospitals()
+        {
+            return View();
+        }
     }
 }
