@@ -52,8 +52,49 @@
         document.getElementById("bPressure").style.color = "black";
         document.getElementById("antibodies").style.color = "black";
         document.getElementById("iLevels").style.color = "black";
+        document.getElementById("hospAlert").style.color = "red";
     }
     
 }
 
-setInterval(Vitals(), 2000);
+function hospDistance()
+{
+
+    var iOne = Math.floor((Math.random() * 10) + 0);
+    var iTwo = Math.floor((Math.random() * 10) + 0);
+    var iThree = Math.floor((Math.random() * 10) + 0);
+    var iFour = Math.floor((Math.random() * 10) + 0);
+    var iFive = Math.floor((Math.random() * 10) + 0);
+
+    var distance = [1.4, 0.5, 3, 4.5, 5, 4.7, 0.7, 2, 2.7, 1.3, 5.5]; 
+
+    document.getElementById("distanceHospOne").innerHTML = distance[iOne];
+    document.getElementById("distanceHospTwo").innerHTML = distance[iTwo];
+    document.getElementById("distanceHospThree").innerHTML = distance[iThree];
+    document.getElementById("distanceHospFour").innerHTML = distance[iFour];
+    document.getElementById("distanceHospFive").innerHTML = distance[iFive];
+
+    if (distance[iOne] < distance[iTwo] && distance[iThree] && distance[iFour] && distance[iFive]) {
+        document.getElementById("distanceHospOne").style.color = "blue";
+        document.getElementById("hospNameOne").style.color = "blue";
+    }
+    else if (distance[iTwo] < distance[iOne] && distance[iThree] && distance[iFour] && distance[iFive]) {
+        document.getElementById("distanceHospTwo").style.color = "blue";
+        document.getElementById("hospNameTwo").style.color = "blue";
+    }
+    else if (distance[iThree] < distance[iOne] && distance[iTwo] && distance[iFour] && distance[iFive]) {
+        document.getElementById("distanceHospThree").style.color = "blue";
+        document.getElementById("hospNameThree").style.color = "blue";
+    }
+    else if (distance[iFour] < distance[iOne] && distance[iThree] && distance[iTwo] && distance[iFive]) {
+        document.getElementById("distanceHospFour").style.color = "blue";
+        document.getElementById("hospNameFour").style.color = "blue";
+    }
+    else
+    {
+        document.getElementById("distanceHospFive").style.color = "blue";
+        document.getElementById("hospNameFive").style.color = "blue";
+    }
+    
+
+}

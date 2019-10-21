@@ -1,0 +1,72 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/StyleSheet1.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Hospitals</title>
+</head>
+<body onload="hospDistance()">
+    <h1 class="Heading"><img src="~/TheFlem.png"></h1>
+    <div class="Main">
+        <div class="topnav">
+            <a class="active" href="https://localhost:44371/Project/WelcomePage">Back</a>
+        </div>
+        <div class="About">
+            <h1>Hospitals In The Area</h1>
+        </div>
+        <div class="Input">
+            <p class="Text">
+                Here is a list of all the hospitals in the area. Please contact the one closest to you in the case of an emergency
+            </p>
+            <hr />
+        </div>
+
+
+        <br />
+        <div class="About">
+            <table class="customers">
+                <tr>
+                    <th colspan="3">Hospitals</th>
+                </tr>
+                <tr>
+                    <td><b>Hospital</b></td>
+                    <td><b>Distance in KM</b></td>
+                    <td><b>Contact Details</b></td>
+                </tr>
+                <tr>
+                    <td id="hospNameOne">Life Brooklyn Hospital</td>
+                    <td><p id="distanceHospOne"></p></td>
+                    <td>012 433 0860</td>
+                </tr>
+                <tr>
+                    <td id="hospNameTwo">Zuid Afrikaans Hospital</td>
+                    <td><p id="distanceHospTwo"></p></td>
+                    <td>012 343 0300</td>
+                </tr>
+                <tr>
+                    <td id="hospNameThree">Mediclinic Heart Hospital</td>
+                    <td><p id="distanceHospThree"></p></td>
+                    <td>012 440 0200</td>
+                </tr>
+                <tr>
+                    <td id="hospNameFour">Netcare Jakaranda Hospital</td>
+                    <td><p id="distanceHospFour"></p></td>
+                    <td>012 421 6700</td>
+                </tr>
+                <tr>
+                    <td id="hospNameFive">Steve Biko Academic Hospital</td>
+                    <td><p id="distanceHospFive"></p></td>
+                    <td>012 354 7000</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="~/Scripts/JavaScript.js"></script>
+</body>
+</html>
