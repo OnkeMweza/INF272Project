@@ -14,6 +14,8 @@ namespace Deliverable2.Controllers
     {
         private Project_DBEntities db = new Project_DBEntities();
 
+        public object userGUID { get; private set; }
+
         // GET: Patients
         public ActionResult Index()
         {
@@ -40,7 +42,7 @@ namespace Deliverable2.Controllers
                 {
                     return HttpNotFound();
                 }
-                return View(patient);
+                return View(patiVM);
             }
             return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
         }
