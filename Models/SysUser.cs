@@ -31,5 +31,7 @@ namespace Deliverable2.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SysAdmin> SysAdmins { get; set; }
         public virtual UserType UserType { get; set; }
+        public string GUID { get; internal set; }
+        public DateTime GUIDExpiry { get; internal set; }
     }
 }
