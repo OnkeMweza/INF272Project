@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Project_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Hospital">
+    <Key>
+      <PropertyRef Name="HID" />
+    </Key>
+    <Property Name="HID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HospitalName" Type="varchar" MaxLength="50" />
+    <Property Name="AID" Type="int" />
+  </EntityType>
+  <EntityType Name="Illness">
+    <Key>
+      <PropertyRef Name="IID" />
+    </Key>
+    <Property Name="IID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IllnessName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MedicalAid">
+    <Key>
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="MID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MedicalAidName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Partner">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PartnerName" Type="varchar" MaxLength="50" />
+    <Property Name="ContactDetails" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+    <Property Name="Age" Type="int" />
+    <Property Name="ContactDetails" Type="char" MaxLength="10" />
+    <Property Name="ChipID" Type="char" MaxLength="10" />
+    <Property Name="MID" Type="int" />
+    <Property Name="VitalID" Type="int" />
+    <Property Name="RID" Type="int" />
+    <Property Name="IID" Type="int" />
+    <Property Name="AID" Type="int" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="PatientRelative">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="ContactDetailsP" Type="char" MaxLength="10" />
+    <Property Name="ContactDetailsH" Type="char" MaxLength="10" />
+    <Property Name="ContactDetailsW" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Street">
+    <Key>
+      <PropertyRef Name="StreetID" />
+    </Key>
+    <Property Name="StreetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StreetName" Type="varchar" MaxLength="50" />
+    <Property Name="HouseNO" Type="int" />
+    <Property Name="SurbubID" Type="int" />
+  </EntityType>
+  <EntityType Name="Surbub">
+    <Key>
+      <PropertyRef Name="SurbubID" />
+    </Key>
+    <Property Name="SurbubID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SurbubName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SysAdmin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="ContactDetails" Type="char" MaxLength="10" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="SysUser">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+    <Property Name="Upassword" Type="varchar" MaxLength="50" />
+    <Property Name="UTID" Type="int" />
+  </EntityType>
+  <EntityType Name="UAddress">
+    <Key>
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="AID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StreetID" Type="int" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="UTID" />
+    </Key>
+    <Property Name="UTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UTDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vital">
+    <Key>
+      <PropertyRef Name="VitalID" />
+    </Key>
+    <Property Name="VitalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HeartRate" Type="int" />
+    <Property Name="BloodPressure" Type="int" />
+    <Property Name="BloodSugar" Type="int" />
+    <Property Name="IronLevels" Type="int" />
+    <Property Name="WhiteBloodCells" Type="int" />
+    <Property Name="RedBloodCells" Type="int" />
+    <Property Name="Antibodies" Type="int" />
+    <Property Name="Glucose" Type="int" />
+    <Property Name="Cholesterol" Type="int" />
+  </EntityType>
+  <Association Name="FK__Hospital__AID__6A30C649">
+    <End Role="UAddress" Type="Self.UAddress" Multiplicity="0..1" />
+    <End Role="Hospital" Type="Self.Hospital" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UAddress">
+        <PropertyRef Name="AID" />
+      </Principal>
+      <Dependent Role="Hospital">
+        <PropertyRef Name="AID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient__AID__66603565">
+    <End Role="UAddress" Type="Self.UAddress" Multiplicity="0..1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UAddress">
+        <PropertyRef Name="AID" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="AID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient__IID__656C112C">
+    <End Role="Illness" Type="Self.Illness" Multiplicity="0..1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Illness">
+        <PropertyRef Name="IID" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="IID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient__MID__628FA481">
+    <End Role="MedicalAid" Type="Self.MedicalAid" Multiplicity="0..1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedicalAid">
+        <PropertyRef Name="MID" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="MID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient__RID__6477ECF3">
+    <End Role="PatientRelative" Type="Self.PatientRelative" Multiplicity="0..1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PatientRelative">
+        <PropertyRef Name="RID" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="RID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient__userID__6754599E">
+    <End Role="SysUser" Type="Self.SysUser" Multiplicity="0..1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SysUser">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient__VitalID__6383C8BA">
+    <End Role="Vital" Type="Self.Vital" Multiplicity="0..1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vital">
+        <PropertyRef Name="VitalID" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="VitalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Street__SurbubID__5BE2A6F2">
+    <End Role="Surbub" Type="Self.Surbub" Multiplicity="0..1" />
+    <End Role="Street" Type="Self.Street" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Surbub">
+        <PropertyRef Name="SurbubID" />
+      </Principal>
+      <Dependent Role="Street">
+        <PropertyRef Name="SurbubID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SysAdmin__userID__534D60F1">
+    <End Role="SysUser" Type="Self.SysUser" Multiplicity="0..1" />
+    <End Role="SysAdmin" Type="Self.SysAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SysUser">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="SysAdmin">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SysUser__UTID__4F7CD00D">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="SysUser" Type="Self.SysUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="UTID" />
+      </Principal>
+      <Dependent Role="SysUser">
+        <PropertyRef Name="UTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UAddress__Street__5EBF139D">
+    <End Role="Street" Type="Self.Street" Multiplicity="0..1" />
+    <End Role="UAddress" Type="Self.UAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Street">
+        <PropertyRef Name="StreetID" />
+      </Principal>
+      <Dependent Role="UAddress">
+        <PropertyRef Name="StreetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Project_DBModelStoreContainer">
+    <EntitySet Name="Hospital" EntityType="Self.Hospital" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Illness" EntityType="Self.Illness" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedicalAid" EntityType="Self.MedicalAid" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Partner" EntityType="Self.Partner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientRelative" EntityType="Self.PatientRelative" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Street" EntityType="Self.Street" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Surbub" EntityType="Self.Surbub" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SysAdmin" EntityType="Self.SysAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SysUser" EntityType="Self.SysUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UAddress" EntityType="Self.UAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vital" EntityType="Self.Vital" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Hospital__AID__6A30C649" Association="Self.FK__Hospital__AID__6A30C649">
+      <End Role="UAddress" EntitySet="UAddress" />
+      <End Role="Hospital" EntitySet="Hospital" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient__AID__66603565" Association="Self.FK__Patient__AID__66603565">
+      <End Role="UAddress" EntitySet="UAddress" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient__IID__656C112C" Association="Self.FK__Patient__IID__656C112C">
+      <End Role="Illness" EntitySet="Illness" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient__MID__628FA481" Association="Self.FK__Patient__MID__628FA481">
+      <End Role="MedicalAid" EntitySet="MedicalAid" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient__RID__6477ECF3" Association="Self.FK__Patient__RID__6477ECF3">
+      <End Role="PatientRelative" EntitySet="PatientRelative" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient__userID__6754599E" Association="Self.FK__Patient__userID__6754599E">
+      <End Role="SysUser" EntitySet="SysUser" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient__VitalID__6383C8BA" Association="Self.FK__Patient__VitalID__6383C8BA">
+      <End Role="Vital" EntitySet="Vital" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Street__SurbubID__5BE2A6F2" Association="Self.FK__Street__SurbubID__5BE2A6F2">
+      <End Role="Surbub" EntitySet="Surbub" />
+      <End Role="Street" EntitySet="Street" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SysAdmin__userID__534D60F1" Association="Self.FK__SysAdmin__userID__534D60F1">
+      <End Role="SysUser" EntitySet="SysUser" />
+      <End Role="SysAdmin" EntitySet="SysAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SysUser__UTID__4F7CD00D" Association="Self.FK__SysUser__UTID__4F7CD00D">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="SysUser" EntitySet="SysUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UAddress__Street__5EBF139D" Association="Self.FK__UAddress__Street__5EBF139D">
+      <End Role="Street" EntitySet="Street" />
+      <End Role="UAddress" EntitySet="UAddress" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

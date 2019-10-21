@@ -1,0 +1,34 @@
+﻿@model Deliverable2.Models.UAddress
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>UAddress</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Street.StreetName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Street.StreetName)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.AID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

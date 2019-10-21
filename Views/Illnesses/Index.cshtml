@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Deliverable2.Models.Illness>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IllnessName)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IllnessName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.IID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.IID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

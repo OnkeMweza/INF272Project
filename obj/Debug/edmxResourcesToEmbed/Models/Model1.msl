@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Project_DBModelStoreContainer" CdmEntityContainer="Project_DBEntities">
+    <EntitySetMapping Name="Hospitals">
+      <EntityTypeMapping TypeName="Project_DBModel.Hospital">
+        <MappingFragment StoreEntitySet="Hospital">
+          <ScalarProperty Name="HID" ColumnName="HID" />
+          <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+          <ScalarProperty Name="AID" ColumnName="AID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Illnesses">
+      <EntityTypeMapping TypeName="Project_DBModel.Illness">
+        <MappingFragment StoreEntitySet="Illness">
+          <ScalarProperty Name="IID" ColumnName="IID" />
+          <ScalarProperty Name="IllnessName" ColumnName="IllnessName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedicalAids">
+      <EntityTypeMapping TypeName="Project_DBModel.MedicalAid">
+        <MappingFragment StoreEntitySet="MedicalAid">
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="MedicalAidName" ColumnName="MedicalAidName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Partners">
+      <EntityTypeMapping TypeName="Project_DBModel.Partner">
+        <MappingFragment StoreEntitySet="Partner">
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="PartnerName" ColumnName="PartnerName" />
+          <ScalarProperty Name="ContactDetails" ColumnName="ContactDetails" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="Project_DBModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="ContactDetails" ColumnName="ContactDetails" />
+          <ScalarProperty Name="ChipID" ColumnName="ChipID" />
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="VitalID" ColumnName="VitalID" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="IID" ColumnName="IID" />
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientRelatives">
+      <EntityTypeMapping TypeName="Project_DBModel.PatientRelative">
+        <MappingFragment StoreEntitySet="PatientRelative">
+          <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="ContactDetailsP" ColumnName="ContactDetailsP" />
+          <ScalarProperty Name="ContactDetailsH" ColumnName="ContactDetailsH" />
+          <ScalarProperty Name="ContactDetailsW" ColumnName="ContactDetailsW" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Streets">
+      <EntityTypeMapping TypeName="Project_DBModel.Street">
+        <MappingFragment StoreEntitySet="Street">
+          <ScalarProperty Name="StreetID" ColumnName="StreetID" />
+          <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+          <ScalarProperty Name="HouseNO" ColumnName="HouseNO" />
+          <ScalarProperty Name="SurbubID" ColumnName="SurbubID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Surbubs">
+      <EntityTypeMapping TypeName="Project_DBModel.Surbub">
+        <MappingFragment StoreEntitySet="Surbub">
+          <ScalarProperty Name="SurbubID" ColumnName="SurbubID" />
+          <ScalarProperty Name="SurbubName" ColumnName="SurbubName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysAdmins">
+      <EntityTypeMapping TypeName="Project_DBModel.SysAdmin">
+        <MappingFragment StoreEntitySet="SysAdmin">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="ContactDetails" ColumnName="ContactDetails" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysUsers">
+      <EntityTypeMapping TypeName="Project_DBModel.SysUser">
+        <MappingFragment StoreEntitySet="SysUser">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Upassword" ColumnName="Upassword" />
+          <ScalarProperty Name="UTID" ColumnName="UTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UAddresses">
+      <EntityTypeMapping TypeName="Project_DBModel.UAddress">
+        <MappingFragment StoreEntitySet="UAddress">
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="StreetID" ColumnName="StreetID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="Project_DBModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="UTID" ColumnName="UTID" />
+          <ScalarProperty Name="UTDescription" ColumnName="UTDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vitals">
+      <EntityTypeMapping TypeName="Project_DBModel.Vital">
+        <MappingFragment StoreEntitySet="Vital">
+          <ScalarProperty Name="VitalID" ColumnName="VitalID" />
+          <ScalarProperty Name="HeartRate" ColumnName="HeartRate" />
+          <ScalarProperty Name="BloodPressure" ColumnName="BloodPressure" />
+          <ScalarProperty Name="BloodSugar" ColumnName="BloodSugar" />
+          <ScalarProperty Name="IronLevels" ColumnName="IronLevels" />
+          <ScalarProperty Name="WhiteBloodCells" ColumnName="WhiteBloodCells" />
+          <ScalarProperty Name="RedBloodCells" ColumnName="RedBloodCells" />
+          <ScalarProperty Name="Antibodies" ColumnName="Antibodies" />
+          <ScalarProperty Name="Glucose" ColumnName="Glucose" />
+          <ScalarProperty Name="Cholesterol" ColumnName="Cholesterol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
