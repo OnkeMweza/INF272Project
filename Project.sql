@@ -70,6 +70,8 @@ userID int identity(1,1) primary key,
 EmailAddress varchar(50),	/*Foreign key*/
 
 Upassword varchar(50),
+ GUID varchar(50) NULL,
+	GUIDExpiry datetime NULL,
 
 /*Foreign key to usertype table*/
 
