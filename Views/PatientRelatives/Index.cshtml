@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Deliverable2.Models.PatientRelative>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactDetailsP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactDetailsH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactDetailsW)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactDetailsP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactDetailsH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactDetailsW)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.RID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.RID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.RID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

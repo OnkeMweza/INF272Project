@@ -300,82 +300,28 @@ function SHA256(s) {
             }
 
 
-            else if ((c > 127) && (c < 2048)) {
-
-
+            else if ((c > 127) && (c < 2048))
+            {
                 utftext += String.fromCharCode((c >> 6) | 192);
-
-
                 utftext += String.fromCharCode((c & 63) | 128);
-
-
             }
-
-
             else {
-
-
                 utftext += String.fromCharCode((c >> 12) | 224);
-
-
                 utftext += String.fromCharCode(((c >> 6) & 63) | 128);
-
-
                 utftext += String.fromCharCode((c & 63) | 128);
-
-
             }
-
-
-
-
         }
-
-
-
-
         return utftext;
-
-
     }
-
-
-
-
     function binb2hex(binarray) {
-
-
         var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
-
-
         var str = "";
-
-
         for (var i = 0; i < binarray.length * 4; i++) {
-
-
             str += hex_tab.charAt((binarray[i >> 2] >> ((3 - i % 4) * 8 + 4)) & 0xF) +
-
-
                 hex_tab.charAt((binarray[i >> 2] >> ((3 - i % 4) * 8)) & 0xF);
-
-
         }
-
-
         return str;
-
-
     }
-
-
-
-
     s = Utf8Encode(s);
-
-
     return binb2hex(core_sha256(str2binb(s), s.length * chrsz));
-
-
-
 }

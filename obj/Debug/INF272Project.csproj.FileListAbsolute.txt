@@ -150,3 +150,7 @@ C:\Users\User\Desktop\Project\INF272Project\obj\Debug\INF272Project.csproj.CoreC
 C:\Users\User\Desktop\Project\INF272Project\obj\Debug\INF272Project.csproj.CopyComplete
 C:\Users\User\Desktop\Project\INF272Project\obj\Debug\Deliverable2.dll
 C:\Users\User\Desktop\Project\INF272Project\obj\Debug\Deliverable2.pdb
+C:\Users\User\Desktop\Project\INF272Project\bin\EntityFramework.dll
+C:\Users\User\Desktop\Project\INF272Project\bin\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\Project\INF272Project\bin\EntityFramework.xml
+C:\Users\User\Desktop\Project\INF272Project\bin\EntityFramework.SqlServer.xml

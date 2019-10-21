@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Deliverable2.Models.Patient>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChipID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Illness.IllnessName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicalAid.MedicalAidName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UAddress.AID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientRelative.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SysUser.EmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vital.VitalID)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactDetails)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChipID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Illness.IllnessName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedicalAid.MedicalAidName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UAddress.AID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientRelative.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SysUser.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vital.VitalID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.PatientID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.PatientID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.PatientID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
