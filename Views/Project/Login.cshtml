@@ -21,17 +21,18 @@
 
     <div class="Login">
 
-        <form action="WelcomePage">
+        @using (Html.BeginForm("Login","Project",FormMethod.Post))
+        {
             <label for="txtUsername">Email Address</label>
             <br />
             <input type="text" id="txtEmail" name="Email" required placeholder="Your email address">
             <br />
             <label for="txtPassword">Password</label>
             <br />
-            <input id="txtPassword" type="password" required placeholder="Your password" />
+            <input id="txtPassword" type="password" name="Password" required placeholder="Your password" />
             <br />
             <input type="Submit" value="Login">
-        </form>
+        }
 
     </div>
 
