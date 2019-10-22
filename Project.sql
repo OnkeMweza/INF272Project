@@ -3,12 +3,15 @@ drop database Project_DB;
 
 create database Project_DB;
 
-
+drop table Hospital;
 
 use Project_DB;
-
-
-
+alter table Street
+drop column HouseNO1;
+alter table UAddress
+add HouseNO int;
+alter table Street
+add HouseNO int;
 create table MedicalAid(
 
 MID int identity(1,1) primary key,
@@ -70,8 +73,6 @@ userID int identity(1,1) primary key,
 EmailAddress varchar(50),	/*Foreign key*/
 
 Upassword varchar(50),
- GUID varchar(50) NULL,
-	GUIDExpiry datetime NULL,
 
 /*Foreign key to usertype table*/
 
@@ -141,8 +142,6 @@ StreetID int identity(1,1) primary key,
 
 StreetName varchar(50),
 
-HouseNO int,
-
 SurbubID int,
 
 foreign key (SurbubID) references Surbub(SurbubID)
@@ -158,6 +157,8 @@ Create table UAddress(
 AID int identity(1,1) primary key,
 
 StreetID int,
+HouseNO int,
+
 
 foreign key (StreetID) references Street(StreetID)
 
@@ -225,6 +226,8 @@ create table Hospital(
 HID int identity(1,1) primary key,
 
 HospitalName varchar(50),
+
+ContactDetails char(10),
 
 AID int,
 
