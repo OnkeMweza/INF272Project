@@ -15,14 +15,16 @@ namespace INF272Project.Controllers
 {
     public class ProjectController : Controller
     {
-        private Project_DBEntities db = new Project_DBEntities();
+        private Project_DBEntities1 db = new Project_DBEntities1();
         // GET: Project
         public ActionResult Home()
         {
             return View();
         }
 
-        public ActionResult WelcomePage(string Name, string Surname, string Email, string password, int Age, string Contact, int HouseNo, [Bind(Include = "StreetID,StreetName,HouseNO,SurbubID")] Street street, [Bind(Include = "SurbubID,SurbubName")] Surbub surbub, [Bind(Include = "IID,IllnessName")] Illness illness, [Bind(Include = "MID,MedicalAidName")] MedicalAid medicalAid, string ChipID, string RelName, string RelSurname, string RelPersNo, string txtRelHomeNo, string txtRelWorkNo)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult WelcomePage(string Name, string Surname, string Email, string password, int Age, string Contact, int HouseNo,string streetName, string surbubName , string illnessN, string MedAid, string ChipID, string RelName, string RelSurname, string RelPersNo, string txtRelHomeNo, string txtRelWorkNo)
         {
             //creating patients
             if (Name == null) return View();
@@ -41,25 +43,33 @@ namespace INF272Project.Controllers
             rel.FirstName = RelName;
             rel.Surname = RelSurname;
             db.PatientRelatives.Add(rel);
-            db.SaveChanges();
+            db.SaveChangesAsync();
 
-            p.RID = db.PatientRelatives.Where(rr => rr.FirstName == RelName && rr.Surname == RelSurname && rr.ContactDetailsP == RelPersNo).FirstOrDefault().RID;
+            PatientRelative refp = new PatientRelative();
+            refp = db.PatientRelatives.Where(rr => rr.FirstName == RelName && rr.Surname == RelSurname && rr.ContactDetailsP == RelPersNo).FirstOrDefault();
+            p.RID = refp.RID;
 
 
 
-            SysUser user = new SysUser();
+           SysUser user = new SysUser();
             user.UTID = 1;
             user.Upassword = computeSha256(password);
             user.EmailAddress = Email;
             db.SysUsers.Add(user);
             db.SaveChanges();
 
+            Street street = new Street();
+            street.StreetName = streetName;
             db.Streets.Add(street);
+
+            Surbub surbub = new Surbub();
+            surbub.SurbubName = surbubName.ToUpper();
             db.Surbubs.Add(surbub);
             db.SaveChanges();
 
             Street str = db.Streets.Where(ss => ss.StreetName == street.StreetName).FirstOrDefault();
-            str.SurbubID = db.Surbubs.Where(ss => ss.SurbubName == surbub.SurbubName).FirstOrDefault().SurbubID;
+            Surbub refSur = db.Surbubs.Where(ss => ss.SurbubName == surbub.SurbubName).FirstOrDefault();
+            str.SurbubID = refSur.SurbubID;
 
             UAddress a = new UAddress();
             a.HouseNO = HouseNo;
@@ -67,12 +77,20 @@ namespace INF272Project.Controllers
             db.UAddresses.Add(a);
             db.SaveChanges();
 
-            p.AID = db.UAddresses.Where(aa => aa.StreetID == str.StreetID).FirstOrDefault().AID;
+            UAddress ua = db.UAddresses.Where(aa => aa.StreetID == str.StreetID).FirstOrDefault();
+            p.AID = ua.AID;
             //db.Illnesses.Add(illness);
             //db.MedicalAids.Add(medicalAid);
-           
 
-            p.IID = db.Illnesses.Where(zz => zz.IllnessName == illness.IllnessName).FirstOrDefault().IID;
+            Illness illness = new Illness();
+            illness.IllnessName = illnessN;
+            db.Illnesses.Add(illness);
+
+            MedicalAid medicalAid = new MedicalAid();
+            medicalAid.MedicalAidName = MedAid;
+            db.MedicalAids.Add(medicalAid);
+            Illness ill = db.Illnesses.Where(zz => zz.IllnessName == illness.IllnessName).FirstOrDefault();
+            p.IID = ill.IID;
             p.MID = db.MedicalAids.Where(zz => zz.MedicalAidName == medicalAid.MedicalAidName).FirstOrDefault().MID;
 
 
