@@ -14,8 +14,8 @@ namespace INF272Project.Controllers
     {
         private Project_DBEntities db = new Project_DBEntities();
 
-        public string Password { get; private set; }
-        public string Email { get; private set; }
+        //public string Password { get; private set; }
+        //public string Email { get; private set; }
 
         // GET: Project
         public ActionResult Home()
@@ -29,7 +29,7 @@ namespace INF272Project.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login()
+        public ActionResult Login(string Email, string Password)
         {
             var hashedPassword = ComputeSha256Hash(Password);
             Deliverable2.Models.SysUser user = db.SysUsers.Where(zz => zz.EmailAddress == Email
